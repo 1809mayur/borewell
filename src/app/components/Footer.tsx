@@ -1,5 +1,5 @@
 import { Box, Divider, Grid, Typography, useTheme } from "@mui/material";
-import constants from "@utils/constants";
+
 import React from "react";
 
 const Footer = () => {
