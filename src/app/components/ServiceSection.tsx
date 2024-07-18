@@ -3,6 +3,7 @@ import { Grid, Box, Typography, Button, CardMedia } from "@mui/material";
 import { availableServices } from "../utils/constants";
 import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import useTheme from "@mui/material/styles/useTheme";
 
 interface ServiceSectionCardProps {
   serviceIndex: number;
@@ -13,6 +14,7 @@ const ServiceSection = () => {
   const [selectedServiceIndex, setSelectedServiceIndex] = useState(0);
   const availableServicesLength: number = availableServices?.length - 1;
 
+  const theme = useTheme();
   useEffect(() => {
     if (selectedServiceIndex < 0) {
       setSelectedServiceIndex(0);
@@ -81,9 +83,12 @@ const ServiceSection = () => {
 
           {/* Left Icon to change service card with next Card(smaller screens < 1024 px) */}
           <Box display={{ lg: "none", xs: "block" }}>
-            <Button
-              sx={{ position: "absolute", left: 0 }}
-              size="small"
+            <ArrowCircleLeftOutlinedIcon
+              sx={{
+                position: "absolute",
+                left: "2rem",
+                color: theme.palette.primary.main,
+              }}
               onClick={() =>
                 setSelectedServiceIndex(
                   selectedServiceIndex === 0
@@ -91,10 +96,7 @@ const ServiceSection = () => {
                     : selectedServiceIndex - 1
                 )
               }
-            >
-              {" "}
-              Previous
-            </Button>
+            />
           </Box>
 
           {/* Center Service Card */}
@@ -105,9 +107,12 @@ const ServiceSection = () => {
           {/* Right Icon to change service card with next Card(smaller screens < 1024px)  */}
           <Box display={{ lg: "none", xs: "block" }}>
             {" "}
-            <Button
-              sx={{ position: "absolute", right: 0 }}
-              size="small"
+            <ArrowCircleRightOutlinedIcon
+              sx={{
+                position: "absolute",
+                right: "2rem",
+                color: theme.palette.primary.main,
+              }}
               onClick={() =>
                 setSelectedServiceIndex(
                   selectedServiceIndex === availableServicesLength
@@ -115,10 +120,7 @@ const ServiceSection = () => {
                     : selectedServiceIndex + 1
                 )
               }
-            >
-              {" "}
-              Next
-            </Button>
+            />
           </Box>
 
           {/* Right Service Card when screen size is greater than laptop: 1024 */}
