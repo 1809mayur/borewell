@@ -12,6 +12,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useTheme from "@mui/material/styles/useTheme";
+import constants from "../utils/constants";
 
 const headers = [
   { name: "services", url: "service-section" },
@@ -31,7 +32,7 @@ export const TopNav = () => {
         padding={"2rem"}
         className="h-16 fixed top-0 z-50 w-full flex justify-between items-center bg-gradient-custom-theme1"
       >
-        <Box>Brand Name</Box>
+        <Box>{constants.brandName}</Box>
         <Box className="lg:flex justify-evenly w-1/4 xs:hidden">
           {headers.map((header, index) => {
             return <p key={index}> {header.name}</p>;

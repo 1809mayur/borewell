@@ -1,5 +1,5 @@
 import { Box, Divider, Grid, Typography, useTheme } from "@mui/material";
-
+import constants from "../utils/constants";
 import React from "react";
 
 const Footer = () => {
@@ -24,7 +24,10 @@ const Footer = () => {
             marginBottom={{ xs: 2, lg: 0 }}
           >
             <Grid item height={48}>
-              <Typography variant="h6"> About Ganga Sagar </Typography>
+              <Typography variant="h6">
+                {" "}
+                About {constants.brandName}{" "}
+              </Typography>
             </Grid>
             <Grid item>
               <Typography component={"p"}>

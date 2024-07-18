@@ -2,7 +2,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { StaticImageData } from "next/image";
 
 const constants = {
-    brandName: "Borwell"
+    brandName: "Shri Ganga Sagar Borewell"
 }
 
 export interface ServiceType {
