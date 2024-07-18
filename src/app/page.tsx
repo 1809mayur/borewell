@@ -10,7 +10,6 @@ import borewellRepair from "./assets/borewellRepair.png";
 import Image from "next/image";
 import theme from "./utils/theme";
 import ServiceSection from "./components/ServiceSection";
-
 import HardaContractorSection from "./components/HardaContractorSection";
 const headers = ["services", "contact us", "about us"];
 
