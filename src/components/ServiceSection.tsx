@@ -27,7 +27,11 @@ const ServiceSection = () => {
         className="bg-sky-100"
         sx={{
           height: { sm: "200px", md: "250px" },
-          width: props?.focused ? "348px" : "300px",
+          width: {
+            xs: "300px",
+            md: "348px",
+            lg: props?.focused ? "348px" : "300px",
+          },
           //   backgroundColor: props?.focused ? "darkgray" : "lightgray",
           filter: props?.focused ? "null" : "blur(1px)",
           //   transition: "all 3s ease-in-out",
@@ -39,7 +43,7 @@ const ServiceSection = () => {
           alt={availableServices[props?.serviceIndex].title}
           sx={{
             height: { xs: 200, md: 250, lg: 250 },
-            width: { xs: 348, md: 348, lg: 348 },
+            width: { xs: 300, md: 348, lg: 348 },
           }}
         />
         <Typography className="text-center">
