@@ -3,7 +3,7 @@ import React from "react";
 import { Grid, Typography, Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-export const Services = () => {
+const Services = () => {
   const router = useRouter();
   return (
     <Grid

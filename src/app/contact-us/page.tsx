@@ -3,7 +3,7 @@ import React from "react";
 import { Grid, Typography, Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-export const ContactUsPage = () => {
+const ContactPage = () => {
   const router = useRouter();
   return (
     <Grid
@@ -29,4 +29,4 @@ export const ContactUsPage = () => {
   );
 };
 
-export default ContactUsPage;
+export default ContactPage;
