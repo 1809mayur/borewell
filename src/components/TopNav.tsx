@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Box,
@@ -12,16 +13,12 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useTheme from "@mui/material/styles/useTheme";
-import constants from "../utils/constants";
-
-const headers = [
-  { name: "services", url: "service-section" },
-  { name: "contact us", url: "contact-section" },
-  { name: "about us", url: "about-section" },
-];
+import constants, { headers } from "../app/utils/constants";
+import { useRouter } from "next/navigation";
 
 export const TopNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   const theme = useTheme();
 
@@ -32,10 +29,24 @@ export const TopNav = () => {
         padding={"2rem"}
         className="h-16 fixed top-0 z-50 w-full flex justify-between items-center bg-gradient-custom-theme1"
       >
-        <Box>{constants.brandName}</Box>
-        <Box className="lg:flex justify-evenly w-1/4 xs:hidden">
+        <Box onClick={() => router.push("/")} sx={{ cursor: "pointer" }}>
+          {constants.brandName}
+        </Box>
+        <Box
+          className="lg:flex justify-evenly w-1/3 xs:hidden"
+          width={{ lg: "40%" }}
+        >
           {headers.map((header, index) => {
-            return <p key={index}> {header.name}</p>;
+            return (
+              <p
+                key={index}
+                style={{ cursor: "pointer" }}
+                onClick={() => router.push(`${header.url}`)}
+              >
+                {" "}
+                {header.name}
+              </p>
+            );
           })}
         </Box>
         <Box className="lg:hidden">
@@ -84,7 +95,11 @@ export const TopNav = () => {
                   {/* <ListItemIcon>
                     {index % 2 === 0 ? <MenuIcon /> : <CloseIcon />}
                   </ListItemIcon> */}
-                  <ListItemText primary={header?.name} />
+                  <ListItemText
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => router.push(`${header?.url}`)}
+                    primary={header?.name}
+                  />
                 </ListItemButton>
               </ListItem>
             );
