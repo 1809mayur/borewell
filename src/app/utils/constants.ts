@@ -2,7 +2,8 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { StaticImageData } from "next/image";
 
 const constants = {
-    brandName: "Shri Ganga Sagar Borewell"
+    brandName: "Shri Ganga Sagar Borewell",
+    mobileNumber: '9009037793',
 }
 
 export const headers = [

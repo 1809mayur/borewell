@@ -21,7 +21,7 @@ interface ContactFormType {
 
 export const ContactSection = () => {
   const [contactForm, setContactForm] = useState<ContactFormType>({
-    serviceRequest: "select service",
+    serviceRequest: "",
   });
   const [isMobileNumberError, setIsMobileNumberError] = useState(false);
   const [isPincodeError, setIsPincodeError] = useState(false);
@@ -120,11 +120,11 @@ export const ContactSection = () => {
           variant="outlined"
           sx={{ width: { xs: "80%", lg: "18%" } }}
           size={"small"}
-          label="Select Service"
+          displayEmpty
         >
           {availableServices.map((service: any, index: number) => {
             return (
-              <MenuItem key={index} value={service}>
+              <MenuItem key={index} value={service?.title}>
                 {" "}
                 {service?.title}{" "}
               </MenuItem>

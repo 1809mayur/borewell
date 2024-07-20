@@ -11,6 +11,7 @@ import Image from "next/image";
 import theme from "./utils/theme";
 import ServiceSection from "../components/ServiceSection";
 import HardaContractorSection from "../components/HardaContractorSection";
+import Deeplinking from "@/components/Deeplinking";
 const headers = ["services", "contact us", "about us"];
 
 // bg-gradient-to-br from-cyan-400 to-sky-50
@@ -55,6 +56,8 @@ export default function Home() {
         {/* <LazyLoad height={100}>
           <Footer />
         </LazyLoad> */}
+
+        <Deeplinking />
       </Grid>
     </ThemeProvider>
   );
