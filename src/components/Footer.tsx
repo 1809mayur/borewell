@@ -1,9 +1,19 @@
-import { Box, Divider, Grid, Typography, useTheme } from "@mui/material";
-import constants from "../utils/constants";
+"use client";
+import {
+  Box,
+  Divider,
+  Grid,
+  Typography,
+  //  useTheme
+} from "@mui/material";
+import constants, { headers } from "../app/utils/constants";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
+  const router = useRouter();
   return (
     <>
       <Grid>
@@ -48,7 +58,18 @@ const Footer = () => {
               <Typography variant="h6"> Quick Links </Typography>
             </Grid>
             <Grid item>
-              <Typography>Home</Typography>
+              {headers.map((header, index) => {
+                return (
+                  <Typography
+                    key={index}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => router.push(`${header.url}`)}
+                  >
+                    {" "}
+                    {header.name}
+                  </Typography>
+                );
+              })}
             </Grid>
           </Grid>
 

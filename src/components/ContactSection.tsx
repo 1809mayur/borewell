@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
-import { availableServices } from "./../utils/constants";
+import { availableServices } from "../app/utils/constants";
 
 interface ContactFormType {
   fullName?: string;

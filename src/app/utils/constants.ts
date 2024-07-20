@@ -5,6 +5,13 @@ const constants = {
     brandName: "Shri Ganga Sagar Borewell"
 }
 
+export const headers = [
+    { name: "home", url: "/" },
+    { name: "services", url: "services" },
+    { name: "contact", url: "contact-us" },
+    { name: "about us", url: "about-us" },
+  ];
+
 export interface ServiceType {
     title: string;
     imageUrl: string;
