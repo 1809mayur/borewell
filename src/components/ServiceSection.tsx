@@ -1,9 +1,11 @@
+"use client";
 import { useEffect, useState } from "react";
 import { Grid, Box, Typography, Button, CardMedia } from "@mui/material";
 import { availableServices } from "../app/utils/constants";
 import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import useTheme from "@mui/material/styles/useTheme";
+// import GetCard from "./GetCard";
 
 interface ServiceSectionCardProps {
   serviceIndex: number;

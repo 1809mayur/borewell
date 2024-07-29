@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image";
 
 const constants = {
     brandName: "Shri Ganga Sagar Borewell",
-    mobileNumber: '9009037793',
+    mobileNumber: '7577796444',
 }
 
 export const headers = [
@@ -27,4 +27,6 @@ export const availableServices: ServiceType[] = [
     {title: "Pump and motor installation", imageUrl:  '/assets/borewellRepair.png', description: 'Pump and motor installation description'},
 ]
 
+
+export const selectServices: string[] = ["select a service", "Robo", "Robo-rebore", "Standard", "Inwell", "Pump and motor installation"];
 export default constants;
