@@ -83,7 +83,7 @@ const Footer = () => {
               <Typography variant="h6">Our Address</Typography>
             </Grid>
             <Grid item>
-              <Box> +91 9009037793</Box>
+              <Box> +91 {constants?.mobileNumber}</Box>
               <Box> rohit@gmail.com</Box>
               <Box>Chhipaner road Harda, 461331</Box>
               <Box>Links</Box>

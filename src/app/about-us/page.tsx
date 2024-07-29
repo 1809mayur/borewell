@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Typography, Grid, Box, Divider } from "@mui/material";
+import constants from "../utils/constants";
 const About = () => {
   return (
     <Grid
@@ -43,7 +44,7 @@ const About = () => {
             <Typography>Name: Rohit Jat S/O Suresh Jat </Typography>
             <Typography> Gmail: borwell@shrigangasagar.com </Typography>
 
-            <Typography>Number: (+91) 9009037793</Typography>
+            <Typography>Number: (+91) {constants.mobileNumber}</Typography>
           </Box>
         </Box>
 

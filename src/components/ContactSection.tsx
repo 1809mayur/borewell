@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   Box,
@@ -9,7 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
-import { availableServices } from "../app/utils/constants";
+import constants, { selectServices } from "../app/utils/constants";
+import { text } from "stream/consumers";
 
 interface ContactFormType {
   fullName?: string;
@@ -21,7 +23,7 @@ interface ContactFormType {
 
 export const ContactSection = () => {
   const [contactForm, setContactForm] = useState<ContactFormType>({
-    serviceRequest: "",
+    serviceRequest: selectServices[0],
   });
   const [isMobileNumberError, setIsMobileNumberError] = useState(false);
   const [isPincodeError, setIsPincodeError] = useState(false);
@@ -43,7 +45,15 @@ export const ContactSection = () => {
     if (!isPincodeError && !isMobileNumberError) {
       console.log("make an api call or submit this data to data base");
     }
-    console.log(contactForm);
+
+    const generatedMessage = `Hi, I am ${contactForm.fullName} and I want to book a site visit for ${contactForm.serviceRequest} service. My address is ${contactForm.address} and my mobile number is ${contactForm.mobileNumber}.`;
+    // Create the WhatsApp URL
+    const whatsappUrl = `https://wa.me/${
+      constants.mobileNumber
+    }?text=${encodeURIComponent(generatedMessage)}`;
+
+    // You can open a new tab or window here
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -122,11 +132,11 @@ export const ContactSection = () => {
           size={"small"}
           displayEmpty
         >
-          {availableServices.map((service: any, index: number) => {
+          {selectServices.map((service: any, index: number) => {
             return (
-              <MenuItem key={index} value={service?.title}>
+              <MenuItem key={index} value={service} disabled={index === 0}>
                 {" "}
-                {service?.title}{" "}
+                {service}{" "}
               </MenuItem>
             );
           })}
